@@ -1,0 +1,13 @@
+# fly.toml app configuration file generated for david-raygosa-kosmos-test on 2023-06-21T17:05:34-06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "david-raygosa-kosmos-test"
+primary_region = "qro"
+
+[http_service]
+  internal_port = 80
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true

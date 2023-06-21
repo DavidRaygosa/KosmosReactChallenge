@@ -200,6 +200,7 @@ const Component = ({
 }) => {
   const ref = useRef();
 
+  const [elementGuidelines, setElementGuideliens] = useState([]);
   const [nodoReferencia, setNodoReferencia] = useState({
     top,
     left,
@@ -302,6 +303,10 @@ const Component = ({
     );
   };
 
+
+  useEffect(() => {
+    setElementGuideliens([].slice.call(document.querySelectorAll(".draggable")));
+  }, []);
   /**
    * Build and render component
    */
@@ -335,6 +340,7 @@ const Component = ({
           target={isSelected && ref.current}
           resizable
           draggable
+          snapContainer=".parent"
           onDrag={(e) => {
             updateMoveable(id, {
               top: e.top,
@@ -362,6 +368,7 @@ const Component = ({
           origin={false}
           padding={{ left: 0, top: 0, right: 0, bottom: 0 }}
           snappable={true}
+          elementGuidelines={elementGuidelines}
         />
       </div>
     </>
