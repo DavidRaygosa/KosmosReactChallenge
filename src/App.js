@@ -335,6 +335,8 @@ const Component = ({
             X
           </button>
         </div>
+      </div>
+        
         
         <Moveable
           target={isSelected && ref.current}
@@ -352,12 +354,7 @@ const Component = ({
               imageUrl
             });
           }}
-          bounds={{
-            top: 0,
-            left: 0,
-            right: parentBounds?.width,
-            bottom: parentBounds?.height,
-          }}
+          bounds={{"left":0,"top":0,"right":0,"bottom":0,"position":"css"}}
           onResize={onResize}
           //onResizeEnd={onResizeEnd} //! ACCOMULATE CURRENT POSITION TO END POSITION | PREVENT STEP 3 ERROR
           keepRatio={false}
@@ -370,7 +367,6 @@ const Component = ({
           snappable={true}
           elementGuidelines={elementGuidelines}
         />
-      </div>
     </>
   );
 }
